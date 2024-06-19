@@ -1,0 +1,11 @@
+LABEL go
+MouseAndKeyboard.MoveMouseToTextOnScreenWithOCR.WaitForTextToAppearAndClickTextOnSubregionOfScreenWithWindowsOcr TextToFind: $'''Add''' IsRegEx: False WindowsOcrLanguage: MouseAndKeyboard.WindowsOcrLanguage.English Occurence: 1 SearchForTextOn: MouseAndKeyboard.SearchTarget.EntireScreen ImageWidthMultiplier: 1 ImageHeightMultiplier: 1 X1: 1461 Y1: 343 X2: 1811 Y2: 907 MovementStyle: MouseAndKeyboard.MovementStyle.Instant Timeout: 2 ClickType: MouseAndKeyboard.ClickType.LeftClick SecondsBeforeClicking: 1 PositionRelativeToText: MouseAndKeyboard.PositionOnImage.MiddleCenter OffsetX: 0 OffsetY: 0 X=> LocationOfTextFoundX4 Y=> LocationOfTextFoundY4 Width=> WidthOfTextFound4 Height=> HeightOfTextFound4
+    ON ERROR
+        GOTO scroll
+    END
+EXIT FUNCTION
+LABEL scroll
+MouseAndKeyboard.MoveMouse X: 1724 Y: 536 RelativeTo: MouseAndKeyboard.PositionRelativeTo.Screen MovementStyle: MouseAndKeyboard.MovementStyle.Instant
+MouseAndKeyboard.SendKeys.FocusAndSendKeys TextToSend: $'''{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}''' DelayBetweenKeystrokes: 0 SendTextAsHardwareKeys: True
+WAIT 1
+GOTO go
